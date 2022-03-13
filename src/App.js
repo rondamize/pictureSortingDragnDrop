@@ -6,7 +6,7 @@ function App(props) {
   return (
 
         <div className='app-wrapper'>
-            <Images state={props.store.state.mainPage}/>
+            <Images state={props.store.state.mainPage} dispatch={props.store.dispatch.bind(props.store)}/>
         </div>
   );
 }

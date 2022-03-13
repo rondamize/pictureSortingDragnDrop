@@ -12,10 +12,9 @@ const Images = (props) => {
             let route = 'https://live.staticflickr.com/' + photos[i].server + '/' + photos[i].id + '_'
                 + photos[i].secret + '.jpg';
             props.state.images[i].source = route;
-            //console.log(photos[i]);
-
         }
         console.log(props.state.images);
+        props.dispatch({type:'rerender'});
     };
 
     let imagesElements = props.state.images.map(i => <ImageItem source={i.source} />);
