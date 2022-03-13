@@ -20,136 +20,18 @@
 			// Сделать проверку на ошибки
 			.then(data => {
 				let stringToCut = 'jsonFlickrApi(';
-				let photos = JSON.parse(data.slice(stringToCut.length,data.length-1).photos.photo);
+				let photos = JSON.parse(data.slice(stringToCut.length,data.length-1)).photos.photo;
 				console.log(photos);
-			})
-/*
-			.then(data => {
-				console.log('DATA :' + data);
+				for (let i = 0; i < photos.length; i++) {
+			        let image = document.createElement('img');
+			        let route = 'https://live.staticflickr.com/' + photos[i].server + '/' + photos[i].id + '_' + photos[i].secret + '.jpg';
+			        image.setAttribute('src', route);
+			        let container = document.getElementById('container');
+			        container.appendChild(image);	        
+        		}
 			});
-*/
-
-			
-			let photos =  [
-            {
-                "id": "46106952034",
-                "owner": "152442938@N03",
-                "secret": "954b8775fa",
-                "server": "7875",
-                "farm": 8,
-                "title": "Cat",
-                "ispublic": 1,
-                "isfriend": 0,
-                "isfamily": 0
-            },
-            {
-                "id": "33415747642",
-                "owner": "123484290@N06",
-                "secret": "94c11b109b",
-                "server": "3767",
-                "farm": 4,
-                "title": "#cat #catlovers #photo #portrait #photography #green #animal",
-                "ispublic": 1,
-                "isfriend": 0,
-                "isfamily": 0
-            },
-            {
-                "id": "45591380462",
-                "owner": "65509607@N08",
-                "secret": "fbd1cbe951",
-                "server": "1957",
-                "farm": 2,
-                "title": "Cat",
-                "ispublic": 1,
-                "isfriend": 0,
-                "isfamily": 0
-            },
-            {
-                "id": "23096204853",
-                "owner": "42016189@N00",
-                "secret": "86cd3ecddc",
-                "server": "703",
-                "farm": 1,
-                "title": "Cat portrait !",
-                "ispublic": 1,
-                "isfriend": 0,
-                "isfamily": 0
-            },
-            {
-                "id": "37204248186",
-                "owner": "150984307@N06",
-                "secret": "85d00880d8",
-                "server": "4370",
-                "farm": 5,
-                "title": "Cat stories - curiosity..",
-                "ispublic": 1,
-                "isfriend": 0,
-                "isfamily": 0
-            },
-            {
-                "id": "29484396147",
-                "owner": "155376904@N07",
-                "secret": "f0818dbe4c",
-                "server": "1850",
-                "farm": 2,
-                "title": "Cat portrait",
-                "ispublic": 1,
-                "isfriend": 0,
-                "isfamily": 0
-            },
-            {
-                "id": "28289485529",
-                "owner": "150984307@N06",
-                "secret": "330f0766cd",
-                "server": "4603",
-                "farm": 5,
-                "title": "Cat stories - a little sad..",
-                "ispublic": 1,
-                "isfriend": 0,
-                "isfamily": 0
-            },
-            {
-                "id": "9271727618",
-                "owner": "97923098@N02",
-                "secret": "eab87bb929",
-                "server": "3763",
-                "farm": 4,
-                "title": "Cat portrait",
-                "ispublic": 1,
-                "isfriend": 0,
-                "isfamily": 0
-            },
-            {
-                "id": "38465451442",
-                "owner": "65343418@N08",
-                "secret": "59291a4a2f",
-                "server": "4536",
-                "farm": 5,
-                "title": "cat",
-                "ispublic": 1,
-                "isfriend": 0,
-                "isfamily": 0
-            },
-            {
-                "id": "27919206769",
-                "owner": "22154713@N04",
-                "secret": "697bfa1031",
-                "server": "4718",
-                "farm": 5,
-                "title": "Cat Astrophe",
-                "ispublic": 1,
-                "isfriend": 0,
-                "isfamily": 0
-            }
-        ];
+      
         
-        for (let i = 0; i < photos.length; i++) {
-	        let image = document.createElement('img');
-	        let route = 'https://live.staticflickr.com/' + photos[i].server + '/' + photos[i].id + '_' + photos[i].secret + '.jpg';
-	        image.setAttribute('src', route);
-	        let container = document.getElementById('container');
-	        container.appendChild(image);	        
-        }
         
 		</script>
 	</body>
