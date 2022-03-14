@@ -12,14 +12,21 @@ const Images = (props) => {
         for (let i = 0; i < photos.length; i++) {
             let route = 'https://live.staticflickr.com/' + photos[i].server + '/' + photos[i].id + '_'
                 + photos[i].secret + '.jpg';
-            props.state.images[i].source = route;
+            props.state.images['photo-' + i].source = route;
         }
         console.log(props.state.images);
         props.dispatch({type:'rerender'});
     };
 
-    let imagesElements = props.state.images.map((i, index) => <ImageItem image={i} index={index}/>);
-
+    let idImagesNeedToDisplay = props.state.columns['imagesArea'].ImgIds;
+    let allImages = props.state.images;
+    let imagesElements = idImagesNeedToDisplay.map(elementId => {
+        //debugger;
+            let image = allImages[elementId];
+            return <ImageItem image={image} />
+    });
+    //let imagesElements = props.state.images.map((i, index) => <ImageItem image={i} index={index}/>);
+    //debugger;
     return (
             <div className={classes.container}>
                 <div className={classes.images}>
@@ -32,8 +39,6 @@ const Images = (props) => {
                                      {provided.placeholder}
                                 </div>) }
                     </Droppable>
-                    <div className={classes.imagesItemsColumn}>
-                    </div>
                 </div>
                 <button onClick={testImageDownload}>Download Images</button>
             </div>

@@ -1,6 +1,7 @@
 .images {
-    display: grid;
-    grid-template-rows: auto auto;
+    /*display: grid;*/
+    /*grid-template-rows: auto auto;*/
+    height: 500px;
 }
 
 .imagesItemsColumn {

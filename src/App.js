@@ -18,6 +18,7 @@ function App(props) {
         if (destination.droppableId === source.droppableId) {
             return;
         }
+
     };
 
     let onDragStart = start => {
