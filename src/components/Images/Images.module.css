@@ -1,12 +1,17 @@
 .images {
     display: grid;
-    grid-template-columns: 5fr 5fr;
+    grid-template-rows: auto auto;
 }
 
 .imagesItemsColumn {
-
+    display: flex;
 }
 
-.imageItem img{
-    width: 300px;
+.imageItem {
+    width: 100px;
+    margin: 15px;
+}
+
+.container {
+
 }

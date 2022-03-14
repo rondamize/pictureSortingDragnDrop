@@ -1,6 +1,7 @@
 import classes from './Images.module.css';
 import ImageItem from "./ImageItem/ImageItem";
 import {DownloadImages} from "../../redux/Store";
+import {Droppable} from "react-beautiful-dnd";
 
 const Images = (props) => {
     let testImageDownload = async () => {
@@ -17,22 +18,26 @@ const Images = (props) => {
         props.dispatch({type:'rerender'});
     };
 
-    let imagesElements = props.state.images.map(i => <ImageItem source={i.source} />);
+    let imagesElements = props.state.images.map((i, index) => <ImageItem image={i} index={index}/>);
 
-    let source = 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'
     return (
-        <div className={classes.container}>
-            <div className={classes.images}>
-                <div className={classes.imagesItemsColumn}>
-                    {imagesElements}
+            <div className={classes.container}>
+                <div className={classes.images}>
+                    <Droppable droppableId='imagesArea'>
+                        {provided => (
+                                <div className={classes.imagesItemsColumn} ref={provided.innerRef}
+                                     {...provided.droppableProps}>
+                                    {/*<p>Hello</p>*/}
+                                     {imagesElements}
+                                     {provided.placeholder}
+                                </div>) }
+                    </Droppable>
+                    <div className={classes.imagesItemsColumn}>
+                    </div>
                 </div>
-                <div className={classes.imagesItemsColumn}>
-                    {imagesElements}
-                </div>
+                <button onClick={testImageDownload}>Download Images</button>
             </div>
-            <button onClick={testImageDownload}>Download Images</button>
-        </div>
-    );
-};
+    )};
+
 
 export default Images;

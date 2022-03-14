@@ -1,9 +1,23 @@
 import classes from '../Images.module.css'
+import {Draggable} from "react-beautiful-dnd";
+
 const ImageItem = (props) => {
     return (
-        <div className={classes.imageItem}>
-           <img src={props.source} />
-        </div>
+        <Draggable draggableId={props.image.id} index={props.index}>
+            {provided => (
+                // <div className={classes.imageItem}
+                //     {...provided.draggableProps}
+                //     {...provided.dragHandleProps}
+                //     ref={provided.innerRef}
+                // >
+                    <img className={classes.imageItem}
+                         {...provided.draggableProps}
+                         {...provided.dragHandleProps}
+                         ref={provided.innerRef}
+                         src={props.image.source} />
+                // </div>
+            )}
+        </Draggable>
     );
 };
 
