@@ -21,17 +21,29 @@ export let DownloadImages = async () => {
 let store = {
     _state : {
         images: {
-            'photo-0': {id: 'photo-0', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
-            'photo-1': {id: 'photo-1', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
-            'photo-2': {id: 'photo-2', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
-            'photo-3': {id: 'photo-3', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
-            'photo-4': {id: 'photo-4', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
-            'photo-5': {id: 'photo-5', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
-            'photo-6': {id: 'photo-6', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
-            'photo-7': {id: 'photo-7', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
-            'photo-8': {id: 'photo-8', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
-            'photo-9': {id: 'photo-9', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'}
+            'photo-0': {id: 'photo-0', source: ''},
+            'photo-1': {id: 'photo-1', source: ''},
+            'photo-2': {id: 'photo-2', source: ''},
+            'photo-3': {id: 'photo-3', source: ''},
+            'photo-4': {id: 'photo-4', source: ''},
+            'photo-5': {id: 'photo-5', source: ''},
+            'photo-6': {id: 'photo-6', source: ''},
+            'photo-7': {id: 'photo-7', source: ''},
+            'photo-8': {id: 'photo-8', source: ''},
+            'photo-9': {id: 'photo-9', source: ''}
         },
+        // images: {
+        //     'photo-0': {id: 'photo-0', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
+        //     'photo-1': {id: 'photo-1', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
+        //     'photo-2': {id: 'photo-2', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
+        //     'photo-3': {id: 'photo-3', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
+        //     'photo-4': {id: 'photo-4', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
+        //     'photo-5': {id: 'photo-5', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
+        //     'photo-6': {id: 'photo-6', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
+        //     'photo-7': {id: 'photo-7', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
+        //     'photo-8': {id: 'photo-8', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
+        //     'photo-9': {id: 'photo-9', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'}
+        // },
         // images: [
         //     {id: 'photo-0', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
         //     {id: 'photo-1', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
@@ -47,6 +59,7 @@ let store = {
         columns: {
             'imagesArea': {
                 id: 'imagesArea',
+                //ImgIds: ['photo-0','photo-1']
                 ImgIds: ['photo-0','photo-1','photo-2','photo-3','photo-4','photo-5','photo-6','photo-7','photo-8','photo-9']
             },
             'sortingArea': {
@@ -67,6 +80,7 @@ let store = {
     dispatch(action) {
         switch (action.type) {
             case 'rerender':
+                //debugger;
                 this._callSubscriber(store.state);
         }
 

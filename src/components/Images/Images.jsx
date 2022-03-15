@@ -20,10 +20,11 @@ const Images = (props) => {
 
     let idImagesNeedToDisplay = props.state.columns['imagesArea'].ImgIds;
     let allImages = props.state.images;
+    let index = 0;
     let imagesElements = idImagesNeedToDisplay.map(elementId => {
-        //debugger;
+            //debugger;
             let image = allImages[elementId];
-            return <ImageItem image={image} />
+            return <ImageItem key={image.id} image={image} index={index++}/>
     });
     //let imagesElements = props.state.images.map((i, index) => <ImageItem image={i} index={index}/>);
     //debugger;
@@ -34,7 +35,7 @@ const Images = (props) => {
                         {provided => (
                                 <div className={classes.imagesItemsColumn} ref={provided.innerRef}
                                      {...provided.droppableProps}>
-                                    {/*<p>Hello</p>*/}
+                                     {/*<p>Hello</p>*/}
                                      {imagesElements}
                                      {provided.placeholder}
                                 </div>) }
