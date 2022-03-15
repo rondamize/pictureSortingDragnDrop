@@ -2,6 +2,7 @@ import './App.css';
 import Images from "./components/Images/Images";
 import DroppableArea from "./components/DroppableArea/DroppableArea";
 import {DragDropContext} from "react-beautiful-dnd";
+import SearchArea from "./components/SearchArea/SearchArea";
 
 function App(props) {
     let state = props.store.state;
@@ -49,9 +50,10 @@ function App(props) {
         //debugger;
     };
 
-  return (
+    return (
         <DragDropContext onDragEnd={onDragEnd} onDragStart={onDragStart}>
             <div className='app-wrapper'>
+                <SearchArea state={props.store.state} dispatch={props.store.dispatch.bind(props.store)}/>
                 <Images state={props.store.state} dispatch={props.store.dispatch.bind(props.store)} />
                 <DroppableArea state={props.store.state} dispatch={props.store.dispatch.bind(props.store)} />
             </div>

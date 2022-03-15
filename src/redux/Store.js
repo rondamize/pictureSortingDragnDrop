@@ -1,8 +1,11 @@
+const RERENDER = 'RERENDER';
+
 export let DownloadImages = async () => {
     let Flickr = require('flickr-sdk');
     let photos = [];
     let api_key = "5d5c001614ac51c3b054848859942220";
     let f = new Flickr(api_key);
+
     await f.photos.search({
         text: 'dog',
         per_page: 10,
@@ -13,7 +16,34 @@ export let DownloadImages = async () => {
         console.log(photos);
     }).catch(function (err) {
         console.error('bonk', err);
-    });
+    }).finally(() => {console.log('Promise ended')});
+
+    // f.photos.search({
+    //     text: 'dog',
+    //     per_page: 10,
+    //     sort: 'interestingness-desc'
+    // }).then( async res => {
+    //         debugger;
+    //         photos = await res.body.photos.photo;
+    //         console.log(photos);
+    // });
+    // debugger;
+    //
+    // let promise = f.photos.search({
+    //     text: 'dog',
+    //     per_page: 10,
+    //     sort: 'interestingness-desc'
+    // }).then(async function (res) {
+    //         console.log('yay!', res.body.photos.photo);
+    //         photos = await res.body.photos.photo;
+    //         console.log(photos);
+    // }).catch(function (err) {
+    //         console.error('bonk', err);
+    // });
+    //
+    // let res = await promise;
+    //debugger;
+
 
     return photos;
 };
@@ -32,6 +62,9 @@ let store = {
             'photo-8': {id: 'photo-8', source: ''},
             'photo-9': {id: 'photo-9', source: ''}
         },
+        firstKeyWord: 'cat',
+        secondKeyWord:'dog',
+        searchText:'',
         // images: {
         //     'photo-0': {id: 'photo-0', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
         //     'photo-1': {id: 'photo-1', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
@@ -80,7 +113,7 @@ let store = {
     dispatch(action) {
         switch (action.type) {
             case 'rerender':
-                //debugger;
+                debugger;
                 this._callSubscriber(store.state);
         }
 

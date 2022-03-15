@@ -1,5 +1,6 @@
 .droppableArea {
     width: 800px;
     height: 500px;
-    border: 1px solid black;
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
 }
