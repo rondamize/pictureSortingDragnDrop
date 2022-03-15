@@ -31,7 +31,7 @@ const Images = (props) => {
     return (
             <div className={classes.container}>
                 <div className={classes.images}>
-                    <Droppable droppableId='imagesArea'>
+                    <Droppable droppableId='imagesArea' direction='horizontal'>
                         {provided => (
                                 <div className={classes.imagesItemsColumn} ref={provided.innerRef}
                                      {...provided.droppableProps}>

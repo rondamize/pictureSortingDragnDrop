@@ -12,7 +12,7 @@ const DroppableArea = (props) => {
     });
 
     return (
-        <Droppable droppableId='sortingArea'>
+        <Droppable droppableId='sortingArea' direction='horizontal'>
             {provided => (
                 <div className={classes.droppableArea} ref={provided.innerRef}
                      {...provided.droppableProps}>

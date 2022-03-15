@@ -40,20 +40,12 @@ function App(props) {
 
         state.columns[source.droppableId] = newStartColumn;
         state.columns[destination.droppableId] = newEndColumn;
-        // const newState = {
-        //     ...state,
-        //     columns: {
-        //         ...state.columns,
-        //         [newStartColumn.id]: newStartColumn.ImgIds,
-        //         [newEndColumn.id]: newEndColumn.ImgIds
-        //     }
-        // };
         //debugger;
         props.dispatch({type:'rerender'});
     };
 
     let onDragStart = start => {
-        console.log("START: " + start);
+        //console.log("START: " + start);
         //debugger;
     };
 

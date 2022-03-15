@@ -6,11 +6,13 @@
 
 .imagesItemsColumn {
     display: flex;
+    padding: 8px;
 }
 
 .imageItem {
     width: 100px;
     margin: 15px;
+    border-radius: 5px;
 }
 
 .container {
