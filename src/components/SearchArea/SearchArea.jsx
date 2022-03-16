@@ -1,3 +1,4 @@
+import React from "react";
 import classes from './SearchArea.module.css';
 import {DownloadImages} from "../../redux/Store";
 
@@ -6,7 +7,7 @@ const SearchArea = (props) => {
     let testImageDownload = async () => {
         console.log('clicked');
         debugger;
-        let photos = await DownloadImages();
+        let photos = await DownloadImages(props.searchText);
         debugger;
 
         for (let i = 0; i < photos.length; i++) {
@@ -18,10 +19,17 @@ const SearchArea = (props) => {
         props.dispatch({type:'rerender'});
     };
 
+    let searchLine= React.createRef();
+
+    let onSearchChange = () => {
+        let text = searchLine.current.value;
+        props.dispatch({type:'UPDATE_SEARCH_TEXT', newText: text});
+    };
+
     return (
             <div className={classes.searchArea}>
                 <div className={classes.form}>
-                    <input type="text" placeholder="Search here..." />
+                    <textarea placeholder="Search here..." onChange={onSearchChange} ref={searchLine} value={props.searchText}></textarea>
                     <button type="submit" onClick={testImageDownload}></button>
                 </div>
             </div>

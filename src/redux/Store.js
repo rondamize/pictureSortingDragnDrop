@@ -1,13 +1,14 @@
 const RERENDER = 'RERENDER';
 
-export let DownloadImages = async () => {
+export let DownloadImages = async (searchText) => {
     let Flickr = require('flickr-sdk');
     let photos = [];
     let api_key = "5d5c001614ac51c3b054848859942220";
     let f = new Flickr(api_key);
 
     await f.photos.search({
-        text: 'dog',
+        // text: 'dog',
+        text: searchText,
         per_page: 10,
         sort: 'interestingness-desc'
     }).then(function (res) {
@@ -117,8 +118,13 @@ let store = {
     dispatch(action) {
         switch (action.type) {
             case 'rerender':
-                debugger;
                 this._callSubscriber(store.state);
+                break;
+            case 'UPDATE_SEARCH_TEXT':
+                this.state.searchText = action.newText;
+                this._callSubscriber(store.state);
+                //console.log(this.state.searchText);
+                break;
         }
 
     }

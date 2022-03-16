@@ -44,11 +44,12 @@ function App(props) {
         //debugger;
         props.dispatch({type:'rerender'});
     };
-    
+
     return (
         <DragDropContext onDragEnd={onDragEnd}>
             <div className='app-wrapper'>
-                <SearchArea state={props.store.state} dispatch={props.store.dispatch.bind(props.store)}/>
+                <SearchArea state={props.store.state} dispatch={props.store.dispatch.bind(props.store)}
+                            searchText={props.store.state.searchText}/>
                 <Images state={props.store.state} dispatch={props.store.dispatch.bind(props.store)} />
                 <SortingArea state={props.store.state} dispatch={props.store.dispatch.bind(props.store)} />
             </div>
