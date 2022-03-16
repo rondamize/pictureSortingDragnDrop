@@ -1,5 +1,6 @@
 const RERENDER = 'RERENDER';
 
+
 export let DownloadImages = async (searchText) => {
     let Flickr = require('flickr-sdk');
     let photos = [];
@@ -66,8 +67,7 @@ let store = {
                 'k-1-photo-4': {id: 'k-1-photo-4', source: '', tag:''}
             },
         },
-        firstKeyWord: 'cat',
-        secondKeyWord:'dog',
+        userMessage:'',
         searchText:'',
         // images: {
         //     'photo-0': {id: 'photo-0', source: 'https://avatars.yandex.net/get-music-content/193823/cf763a3c.a.8560627-1/m1000x1000?webp=false'},
@@ -129,7 +129,43 @@ let store = {
             case 'UPDATE_SEARCH_TEXT':
                 this.state.searchText = action.newText;
                 this._callSubscriber(store.state);
-                //console.log(this.state.searchText);
+                break;
+            case 'CLEAR_PAGE':
+                //debugger;
+                this.state.images = {
+                    'keyWord-0': {
+                        'k-0-photo-0': {id: 'k-0-photo-0', source: '', tag:''},
+                        'k-0-photo-1': {id: 'k-0-photo-1', source: '', tag:''},
+                        'k-0-photo-2': {id: 'k-0-photo-2', source: '', tag:''},
+                        'k-0-photo-3': {id: 'k-0-photo-3', source: '', tag:''},
+                        'k-0-photo-4': {id: 'k-0-photo-4', source: '', tag:''}
+                    },
+                    'keyWord-1': {
+                        'k-1-photo-0': {id: 'k-1-photo-0', source: '', tag:''},
+                        'k-1-photo-1': {id: 'k-1-photo-1', source: '', tag:''},
+                        'k-1-photo-2': {id: 'k-1-photo-2', source: '', tag:''},
+                        'k-1-photo-3': {id: 'k-1-photo-3', source: '', tag:''},
+                        'k-1-photo-4': {id: 'k-1-photo-4', source: '', tag:''}
+                    }};
+                this.state.columns = {
+                    'imagesArea': {
+                        id: 'imagesArea',
+                        ImgIds: ['k-0-photo-0','k-0-photo-1','k-0-photo-2','k-0-photo-3','k-0-photo-4',
+                            'k-1-photo-0','k-1-photo-1','k-1-photo-2','k-1-photo-3','k-1-photo-4']
+                    },
+                    'sortingArea0': {
+                        id: 'sortingArea0',
+                        tag: '',
+                        ImgIds: []
+                    },
+                    'sortingArea1': {
+                        id: 'sortingArea1',
+                        tag: '',
+                        ImgIds: []
+                    }
+                };
+                this.state.userMessage = '';
+                this._callSubscriber(store.state);
                 break;
         }
 

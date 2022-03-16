@@ -56,7 +56,7 @@ function App(props) {
         <DragDropContext onDragEnd={onDragEnd}>
             <div className='app-wrapper'>
                 <SearchArea state={props.store.state} dispatch={props.store.dispatch.bind(props.store)}
-                            searchText={props.store.state.searchText}/>
+                            searchText={props.store.state.searchText} userMessage={props.store.state.userMessage}/>
                 <Images state={props.store.state} dispatch={props.store.dispatch.bind(props.store)} />
                 <SortingArea state={props.store.state} dispatch={props.store.dispatch.bind(props.store)} />
             </div>

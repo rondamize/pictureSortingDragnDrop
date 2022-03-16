@@ -5,9 +5,16 @@ import {DownloadImages} from "../../redux/Store";
 const SearchArea = (props) => {
 
     let testImageDownload = async () => {
-
+        props.dispatch({type:'CLEAR_PAGE'});
+        //debugger;
         //сделать проверку, что максимум 2 слова введено
         let searchTextArray = props.searchText.split(' ');
+        if (searchTextArray.length > 2) {
+            props.state.userMessage = "Please, enter no more than 2 key words!";
+            //props.dispatch({type:'CLEAR_PAGE'});
+            //alert("<p>Please, enter no more than 2 key words!</p>");
+        }
+
         for (let i = 0; i < searchTextArray.length; i++) {
             //let photosContainer = props.state.images['keyWord-' + i];
             let photos = await DownloadImages(searchTextArray[i]);
@@ -20,14 +27,7 @@ const SearchArea = (props) => {
                 props.state.images['keyWord-' + i]['k-' + i + '-photo-' + j].tag = searchTextArray[i];
             }
         }
-        //debugger;
-        // let photos = await DownloadImages(props.searchText);
-        //
-        // for (let i = 0; i < photos.length; i++) {
-        //     let route = 'https://live.staticflickr.com/' + photos[i].server + '/' + photos[i].id + '_'
-        //         + photos[i].secret + '.jpg';
-        //     props.state.images['photo-' + i].source = route;
-        // }
+
         console.log(props.state.images);
         props.dispatch({type:'rerender'});
     };
@@ -45,6 +45,7 @@ const SearchArea = (props) => {
                     <textarea placeholder="Search here..." onChange={onSearchChange} ref={searchLine} value={props.searchText}></textarea>
                     <button type="submit" onClick={testImageDownload}></button>
                 </div>
+                <p className={classes.userMessage}>{props.state.userMessage}</p>
             </div>
     )};
 
