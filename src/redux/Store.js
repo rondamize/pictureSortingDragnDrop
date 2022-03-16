@@ -16,7 +16,7 @@ export let DownloadImages = async () => {
         console.log(photos);
     }).catch(function (err) {
         console.error('bonk', err);
-    }).finally(() => {console.log('Promise ended')});
+    });
 
     // f.photos.search({
     //     text: 'dog',
@@ -51,16 +51,16 @@ export let DownloadImages = async () => {
 let store = {
     _state : {
         images: {
-            'photo-0': {id: 'photo-0', source: ''},
-            'photo-1': {id: 'photo-1', source: ''},
-            'photo-2': {id: 'photo-2', source: ''},
-            'photo-3': {id: 'photo-3', source: ''},
-            'photo-4': {id: 'photo-4', source: ''},
-            'photo-5': {id: 'photo-5', source: ''},
-            'photo-6': {id: 'photo-6', source: ''},
-            'photo-7': {id: 'photo-7', source: ''},
-            'photo-8': {id: 'photo-8', source: ''},
-            'photo-9': {id: 'photo-9', source: ''}
+            'photo-0': {id: 'photo-0', source: '', tag:''},
+            'photo-1': {id: 'photo-1', source: '', tag:''},
+            'photo-2': {id: 'photo-2', source: '', tag:''},
+            'photo-3': {id: 'photo-3', source: '', tag:''},
+            'photo-4': {id: 'photo-4', source: '', tag:''},
+            'photo-5': {id: 'photo-5', source: '', tag:''},
+            'photo-6': {id: 'photo-6', source: '', tag:''},
+            'photo-7': {id: 'photo-7', source: '', tag:''},
+            'photo-8': {id: 'photo-8', source: '', tag:''},
+            'photo-9': {id: 'photo-9', source: '', tag:''}
         },
         firstKeyWord: 'cat',
         secondKeyWord:'dog',
@@ -95,7 +95,11 @@ let store = {
                 //ImgIds: ['photo-0','photo-1']
                 ImgIds: ['photo-0','photo-1','photo-2','photo-3','photo-4','photo-5','photo-6','photo-7','photo-8','photo-9']
             },
-            'sortingArea': {
+            'sortingArea1': {
+                id: 'sortingArea',
+                ImgIds: []
+            },
+            'sortingArea2': {
                 id: 'sortingArea',
                 ImgIds: []
             }

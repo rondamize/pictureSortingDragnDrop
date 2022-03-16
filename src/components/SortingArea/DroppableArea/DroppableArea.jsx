@@ -1,9 +1,9 @@
 import classes from './DroppableArea.module.css';
 import {Droppable} from "react-beautiful-dnd";
-import ImageItem from "../Images/ImageItem/ImageItem";
+import ImageItem from "../../Images/ImageItem/ImageItem";
 
 const DroppableArea = (props) => {
-    let idImagesNeedToDisplay = props.state.columns['sortingArea'].ImgIds;
+    let idImagesNeedToDisplay = props.state.columns[props.droppableid].ImgIds;
     let allImages = props.state.images;
     let index = 0;
     let imagesElements = idImagesNeedToDisplay.map(elementId => {
@@ -12,7 +12,7 @@ const DroppableArea = (props) => {
     });
 
     return (
-        <Droppable droppableId='sortingArea' direction='horizontal'>
+        <Droppable droppableId={props.droppableid} direction='horizontal'>
             {provided => (
                 <div className={classes.droppableArea} ref={provided.innerRef}
                      {...provided.droppableProps}>
