@@ -4,9 +4,11 @@ import {Droppable} from "react-beautiful-dnd";
 
 const Images = (props) => {
     let idImagesNeedToDisplay = props.state.columns['imagesArea'].ImgIds;
-    let allImages = props.state.images;
+    //debugger;
+    let allImages = {...props.state.images['keyWord-0'], ...props.state.images['keyWord-1']};
     let index = 0;
     let imagesElements = idImagesNeedToDisplay.map(elementId => {
+        //debugger;
         let image = allImages[elementId];
         return <ImageItem key={image.id} image={image} index={index++}/>
     });

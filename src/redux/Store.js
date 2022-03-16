@@ -7,9 +7,8 @@ export let DownloadImages = async (searchText) => {
     let f = new Flickr(api_key);
 
     await f.photos.search({
-        // text: 'dog',
         text: searchText,
-        per_page: 10,
+        per_page: 5,
         sort: 'interestingness-desc'
     }).then(function (res) {
         console.log('yay!', res.body.photos.photo);
@@ -52,16 +51,20 @@ export let DownloadImages = async (searchText) => {
 let store = {
     _state : {
         images: {
-            'photo-0': {id: 'photo-0', source: '', tag:''},
-            'photo-1': {id: 'photo-1', source: '', tag:''},
-            'photo-2': {id: 'photo-2', source: '', tag:''},
-            'photo-3': {id: 'photo-3', source: '', tag:''},
-            'photo-4': {id: 'photo-4', source: '', tag:''},
-            'photo-5': {id: 'photo-5', source: '', tag:''},
-            'photo-6': {id: 'photo-6', source: '', tag:''},
-            'photo-7': {id: 'photo-7', source: '', tag:''},
-            'photo-8': {id: 'photo-8', source: '', tag:''},
-            'photo-9': {id: 'photo-9', source: '', tag:''}
+            'keyWord-0': {
+                'k-0-photo-0': {id: 'k-0-photo-0', source: '', tag:''},
+                'k-0-photo-1': {id: 'k-0-photo-1', source: '', tag:''},
+                'k-0-photo-2': {id: 'k-0-photo-2', source: '', tag:''},
+                'k-0-photo-3': {id: 'k-0-photo-3', source: '', tag:''},
+                'k-0-photo-4': {id: 'k-0-photo-4', source: '', tag:''}
+            },
+            'keyWord-1': {
+                'k-1-photo-0': {id: 'k-1-photo-0', source: '', tag:''},
+                'k-1-photo-1': {id: 'k-1-photo-1', source: '', tag:''},
+                'k-1-photo-2': {id: 'k-1-photo-2', source: '', tag:''},
+                'k-1-photo-3': {id: 'k-1-photo-3', source: '', tag:''},
+                'k-1-photo-4': {id: 'k-1-photo-4', source: '', tag:''}
+            },
         },
         firstKeyWord: 'cat',
         secondKeyWord:'dog',
@@ -94,14 +97,15 @@ let store = {
             'imagesArea': {
                 id: 'imagesArea',
                 //ImgIds: ['photo-0','photo-1']
-                ImgIds: ['photo-0','photo-1','photo-2','photo-3','photo-4','photo-5','photo-6','photo-7','photo-8','photo-9']
+                ImgIds: ['k-0-photo-0','k-0-photo-1','k-0-photo-2','k-0-photo-3','k-0-photo-4',
+                         'k-1-photo-0','k-1-photo-1','k-1-photo-2','k-1-photo-3','k-1-photo-4']
             },
             'sortingArea1': {
-                id: 'sortingArea',
+                id: 'sortingArea1',
                 ImgIds: []
             },
             'sortingArea2': {
-                id: 'sortingArea',
+                id: 'sortingArea2',
                 ImgIds: []
             }
         }

@@ -18,6 +18,7 @@ function App(props) {
             return;
         }
 
+        debugger;
         let start = state.columns[source.droppableId];
         let end = state.columns[destination.droppableId];
 
