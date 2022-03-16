@@ -7,12 +7,10 @@ const SearchArea = (props) => {
     let testImageDownload = async () => {
         props.dispatch({type:'CLEAR_PAGE'});
         //debugger;
-        //сделать проверку, что максимум 2 слова введено
         let searchTextArray = props.searchText.split(' ');
         if (searchTextArray.length > 2) {
             props.state.userMessage = "Please, enter no more than 2 key words!";
             //props.dispatch({type:'CLEAR_PAGE'});
-            //alert("<p>Please, enter no more than 2 key words!</p>");
         }
 
         for (let i = 0; i < searchTextArray.length; i++) {
@@ -42,8 +40,8 @@ const SearchArea = (props) => {
     return (
             <div className={classes.searchArea}>
                 <div className={classes.form}>
-                    <textarea placeholder="Search here..." onChange={onSearchChange} ref={searchLine} value={props.searchText}></textarea>
-                    <button type="submit" onClick={testImageDownload}></button>
+                    <textarea className={classes.searchInput} placeholder="Search here..." onChange={onSearchChange} ref={searchLine} value={props.searchText}></textarea>
+                    <button className={classes.searchButton} type="submit" onClick={testImageDownload}></button>
                 </div>
                 <p className={classes.userMessage}>{props.state.userMessage}</p>
             </div>

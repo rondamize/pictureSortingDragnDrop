@@ -1,11 +1,14 @@
 import classes from './SortingArea.module.css';
-import DroppableArea from "./DroppableArea/DroppableArea";
+import DroppableArea from "./DroppableArea(Is not used currently)/DroppableArea";
+import DroppableButton from "./DroppableButton/DroppableButton";
 
 const SortingArea = (props) => {
     return (
         <div className={classes.sortingArea}>
-            <DroppableArea state={props.state} dispatch={props.dispatch} droppableid={'sortingArea0'}/>
-            <DroppableArea state={props.state} dispatch={props.dispatch} droppableid={'sortingArea1'}/>
+            <DroppableButton state={props.state} dispatch={props.dispatch} droppableid={'sortingArea0'}/>
+            <DroppableButton state={props.state} dispatch={props.dispatch} droppableid={'sortingArea1'}/>
+            {/*<DroppableArea(Is not used currently) state={props.state} dispatch={props.dispatch} droppableid={'sortingArea0'}/>*/}
+            {/*<DroppableArea(Is not used currently) state={props.state} dispatch={props.dispatch} droppableid={'sortingArea1'}/>*/}
         </div>
     );
 };

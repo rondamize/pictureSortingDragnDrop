@@ -1,4 +1,5 @@
 .sortingArea {
     display: flex;
     justify-content: space-around;
+    min-height: 200px;
 }
