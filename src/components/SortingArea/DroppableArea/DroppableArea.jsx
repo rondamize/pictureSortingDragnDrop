@@ -22,15 +22,19 @@ const DroppableArea = (props) => {
     });
 
     return (
-        <Droppable droppableId={props.droppableid} direction='horizontal'>
-            {provided => (
-                <div className={classes.droppableArea} ref={provided.innerRef}
-                     {...provided.droppableProps}>
-                    {imagesElements}
-                    {provided.placeholder}
-                </div>
-            )}
-        </Droppable>
+        <div>
+            <h3>{props.state.columns[props.droppableid].tag}</h3>
+            <Droppable droppableId={props.droppableid} direction='horizontal'>
+                {provided => (
+                    <div className={classes.droppableArea} ref={provided.innerRef}
+                         {...provided.droppableProps}>
+                        {imagesElements}
+                        {provided.placeholder}
+                    </div>
+                )}
+            </Droppable>
+        </div>
+
 
 
     );

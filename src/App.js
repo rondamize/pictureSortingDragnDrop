@@ -18,9 +18,15 @@ function App(props) {
             return;
         }
 
-        debugger;
+        let allImages = {...state.images['keyWord-0'], ...state.images['keyWord-1']};
         let start = state.columns[source.droppableId];
         let end = state.columns[destination.droppableId];
+        //debugger;
+
+        if (end.tag !== allImages[draggableId].tag) {
+            //alert('Нельзя кота к собакам');
+            return;
+        }
 
         let newImagesAreaArray = Array.from(start.ImgIds);
         newImagesAreaArray.splice(source.index, 1);

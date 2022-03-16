@@ -12,6 +12,7 @@ const SearchArea = (props) => {
             //let photosContainer = props.state.images['keyWord-' + i];
             let photos = await DownloadImages(searchTextArray[i]);
             //debugger;
+            props.state.columns['sortingArea' + i].tag = searchTextArray[i];
             for (let j = 0; j < photos.length; j++) {
                 let route = 'https://live.staticflickr.com/' + photos[j].server + '/' + photos[j].id + '_'
                     + photos[j].secret + '.jpg';

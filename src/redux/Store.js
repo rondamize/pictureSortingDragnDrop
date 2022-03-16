@@ -100,12 +100,14 @@ let store = {
                 ImgIds: ['k-0-photo-0','k-0-photo-1','k-0-photo-2','k-0-photo-3','k-0-photo-4',
                          'k-1-photo-0','k-1-photo-1','k-1-photo-2','k-1-photo-3','k-1-photo-4']
             },
-            'sortingArea1': {
-                id: 'sortingArea1',
+            'sortingArea0': {
+                id: 'sortingArea0',
+                tag: '',
                 ImgIds: []
             },
-            'sortingArea2': {
-                id: 'sortingArea2',
+            'sortingArea1': {
+                id: 'sortingArea1',
+                tag: '',
                 ImgIds: []
             }
         }
