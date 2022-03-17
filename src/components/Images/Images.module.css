@@ -5,8 +5,11 @@
 }
 
 .imagesItemsColumn {
-    /*display: flex;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     padding: 8px;
+
 }
 
 .imageItem {
@@ -17,7 +20,7 @@
 }
 
 .container {
-
+    height: 300px;
 }
 
 

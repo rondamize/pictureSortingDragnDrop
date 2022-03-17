@@ -1,5 +1,7 @@
 .sortingArea {
-    display: flex;
-    justify-content: space-around;
+    /*display: flex;*/
+    /*justify-content: space-around;*/
     min-height: 200px;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }

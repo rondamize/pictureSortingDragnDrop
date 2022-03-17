@@ -5,6 +5,12 @@
 /*    border-radius: 5px;*/
 /*}*/
 
+.droppableButtonArea {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
 .droppableButton {
     width: 250px;
     height: 100px;
@@ -13,6 +19,7 @@
     border-radius: 20px;
     font-size:36px;
     border: 2px solid #2A5F63;
+    margin: 0 auto;
 }
 
 .droppableButton:hover {
@@ -32,4 +39,7 @@
     /*border: 1px solid black;*/
     display: flex;
     justify-content: space-around;
+    /*border-right: 1px solid red;*/
 }
+
+
