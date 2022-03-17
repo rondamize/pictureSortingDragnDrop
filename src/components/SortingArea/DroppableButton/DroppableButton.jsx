@@ -26,7 +26,6 @@ const DroppableButton = (props) => {
                         <button className={classes.droppableButton} onClick={changeSortedPhotosVisibility}>
                             {props.state.columns[props.droppableid].tag}
                         </button>
-                        {provided.placeholder}
                     </div>
                 )}
             </Droppable>

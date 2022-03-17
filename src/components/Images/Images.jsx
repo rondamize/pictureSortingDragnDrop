@@ -21,7 +21,6 @@ const Images = (props) => {
                         <div className={classes.imagesItemsColumn} ref={provided.innerRef}
                              {...provided.droppableProps}>
                             {imagesElements}
-                            {provided.placeholder}
                         </div>) }
                 </Droppable>
             </div>

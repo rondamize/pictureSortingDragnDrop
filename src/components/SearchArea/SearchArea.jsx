@@ -41,7 +41,7 @@ const SearchArea = (props) => {
             <div className={classes.searchArea}>
                 <div className={classes.form}>
                     <textarea className={classes.searchInput} placeholder="Search here..." onChange={onSearchChange} ref={searchLine} value={props.searchText}></textarea>
-                    <button className={classes.searchButton} type="submit" onClick={testImageDownload}></button>
+                    <button className={classes.searchButton} type="submit" onClick={testImageDownload}>→</button>
                 </div>
                 <p className={classes.userMessage}>{props.state.userMessage}</p>
             </div>

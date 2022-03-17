@@ -12,6 +12,11 @@
     color: white;
     border-radius: 20px;
     font-size:36px;
+    border: 2px solid #2A5F63;
+}
+
+.droppableButton:hover {
+    border: 5px solid #2A5F63;
 }
 
 .droppableButton:hover {
