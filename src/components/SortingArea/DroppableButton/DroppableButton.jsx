@@ -4,25 +4,15 @@ import SortedImageItem from "./SortedImages/SortedImageItem";
 
 const DroppableButton = (props) => {
 
-    // let idImagesNeedToDisplay = props.state.columns[props.droppableid].ImgIds;
-    // let allImages = {...props.state.images['keyWord-0'], ...props.state.images['keyWord-1']};
-    // let imagesElements = idImagesNeedToDisplay.map(elementId => {
-    //     //debugger;
-    //     let image = allImages[elementId];
-    //     return <SortedImageItem image={image} />
-    // });
-
     let idImagesNeedToDisplay = props.state.columns[props.droppableid].ImgIds;
     let allImages = props.state.images['keyWord-' + props.areaId];
     let imagesElements = idImagesNeedToDisplay.map(elementId => {
-        //debugger;
         let image = allImages[elementId];
         return <SortedImageItem image={image} />
     });
 
 
     let changeSortedPhotosVisibility = () => {
-        //debugger;
         let displayId = 'displaySortedPhotos' + props.areaId;
         props.state.displaySortedPhotos[displayId] = !props.state.displaySortedPhotos[displayId];
         props.dispatch({type:'rerender'});
@@ -33,7 +23,6 @@ const DroppableButton = (props) => {
             <div className={classes.droppableButtonArea}>
                 <Droppable droppableId={props.droppableid} direction='horizontal'>
                     {provided => (
-
                             <button className={classes.droppableButton} onClick={changeSortedPhotosVisibility}
                                     ref={provided.innerRef}
                                     {...provided.droppableProps}>

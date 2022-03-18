@@ -1,5 +1,3 @@
-const RERENDER = 'RERENDER';
-
 export let DownloadImages = async (searchText) => {
     let Flickr = require('flickr-sdk');
     let photos = [];
@@ -46,7 +44,6 @@ let store = {
             displaySortedPhotos0: false,
             displaySortedPhotos1: false
         },
-        // displaySortedPhotos: false,
         columns: {
             'imagesArea': {
                 id: 'imagesArea',
@@ -77,16 +74,13 @@ let store = {
     dispatch(action) {
         switch (action.type) {
             case 'rerender':
-                //debugger;
                 this._callSubscriber(store.state);
                 break;
             case 'UPDATE_SEARCH_TEXT':
-                //debugger;
                 this.state.searchText = action.newText;
                 this._callSubscriber(store.state);
                 break;
             case 'CLEAR_PAGE':
-                //debugger;
                 this.state.images = {
                     'keyWord-0': {
                         'k-0-photo-0': {id: 'k-0-photo-0', source: '', tag:''},

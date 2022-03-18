@@ -8,12 +8,10 @@ function App(props) {
     let state = props.store.state;
     let onDragStart = start => {
         state.needToShuffleImages = false;
-        //debugger;
     };
 
     let onDragEnd = result => {
         const {destination, source, draggableId} = result;
-        //debugger;
 
         if (!destination) {
             return;
@@ -26,7 +24,6 @@ function App(props) {
         let allImages = {...state.images['keyWord-0'], ...state.images['keyWord-1']};
         let start = state.columns[source.droppableId];
         let end = state.columns[destination.droppableId];
-        //debugger;
 
         if (end.tag !== allImages[draggableId].tag) {
             return;
@@ -51,11 +48,10 @@ function App(props) {
         state.columns[source.droppableId] = newStartColumn;
         state.columns[destination.droppableId] = newEndColumn;
 
-        //debugger;
         if (state.columns[source.droppableId].ImgIds.length === 0) {
             state.userMessage = "Congratulations! U have successfully sorted all images.";
         }
-        //debugger;
+
         props.dispatch({type:'rerender'});
     };
 

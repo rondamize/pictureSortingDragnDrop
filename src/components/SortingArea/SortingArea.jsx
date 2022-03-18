@@ -1,5 +1,4 @@
 import classes from './SortingArea.module.css';
-import DroppableArea from "./DroppableArea(Is not used currently)/DroppableArea";
 import DroppableButton from "./DroppableButton/DroppableButton";
 
 const SortingArea = (props) => {

@@ -6,16 +6,12 @@ const SearchArea = (props) => {
 
     let testImageDownload = async () => {
         props.dispatch({type:'CLEAR_PAGE'});
-        //debugger;
         let searchTextArray = props.searchText.split(' ');
         if (searchTextArray.length != 2) {
             props.state.userMessage = "Please, enter 2 key words!";
-            //props.dispatch({type:'CLEAR_PAGE'});
         } else {
             for (let i = 0; i < searchTextArray.length; i++) {
-                //let photosContainer = props.state.images['keyWord-' + i];
                 let photos = await DownloadImages(searchTextArray[i]);
-                //debugger;
                 props.state.columns['sortingArea' + i].tag = searchTextArray[i];
                 for (let j = 0; j < photos.length; j++) {
                     let route = 'https://live.staticflickr.com/' + photos[j].server + '/' + photos[j].id + '_'
@@ -24,8 +20,6 @@ const SearchArea = (props) => {
                     props.state.images['keyWord-' + i]['k-' + i + '-photo-' + j].tag = searchTextArray[i];
                 }
             }
-
-            console.log(props.state.images);
 
             let allImages = props.state.columns['imagesArea'].ImgIds;
             allImages = shuffle(allImages);
