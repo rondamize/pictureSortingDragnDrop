@@ -25,9 +25,17 @@ const SearchArea = (props) => {
                 props.state.images['keyWord-' + i]['k-' + i + '-photo-' + j].tag = searchTextArray[i];
             }
         }
-
+        
         console.log(props.state.images);
+
+        let allImages = props.state.columns['imagesArea'].ImgIds;
+        allImages = shuffle(allImages);
+
         props.dispatch({type:'rerender'});
+    };
+
+    let shuffle = (array) => {
+        return array.sort(() => Math.random() - 0.5);
     };
 
     let searchLine= React.createRef();

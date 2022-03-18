@@ -1,6 +1,5 @@
 const RERENDER = 'RERENDER';
 
-
 export let DownloadImages = async (searchText) => {
     let Flickr = require('flickr-sdk');
     let photos = [];
@@ -18,33 +17,6 @@ export let DownloadImages = async (searchText) => {
     }).catch(function (err) {
         console.error('bonk', err);
     });
-
-    // f.photos.search({
-    //     text: 'dog',
-    //     per_page: 10,
-    //     sort: 'interestingness-desc'
-    // }).then( async res => {
-    //         debugger;
-    //         photos = await res.body.photos.photo;
-    //         console.log(photos);
-    // });
-    // debugger;
-    //
-    // let promise = f.photos.search({
-    //     text: 'dog',
-    //     per_page: 10,
-    //     sort: 'interestingness-desc'
-    // }).then(async function (res) {
-    //         console.log('yay!', res.body.photos.photo);
-    //         photos = await res.body.photos.photo;
-    //         console.log(photos);
-    // }).catch(function (err) {
-    //         console.error('bonk', err);
-    // });
-    //
-    // let res = await promise;
-    //debugger;
-
 
     return photos;
 };
@@ -65,7 +37,7 @@ let store = {
                 'k-1-photo-2': {id: 'k-1-photo-2', source: '', tag:''},
                 'k-1-photo-3': {id: 'k-1-photo-3', source: '', tag:''},
                 'k-1-photo-4': {id: 'k-1-photo-4', source: '', tag:''}
-            },
+            }
         },
         userMessage:'',
         searchText:'',
@@ -101,14 +73,16 @@ let store = {
     dispatch(action) {
         switch (action.type) {
             case 'rerender':
+                debugger;
                 this._callSubscriber(store.state);
                 break;
             case 'UPDATE_SEARCH_TEXT':
+                debugger;
                 this.state.searchText = action.newText;
                 this._callSubscriber(store.state);
                 break;
             case 'CLEAR_PAGE':
-                //debugger;
+                debugger;
                 this.state.images = {
                     'keyWord-0': {
                         'k-0-photo-0': {id: 'k-0-photo-0', source: '', tag:''},
@@ -142,6 +116,7 @@ let store = {
                     }
                 };
                 this.state.userMessage = '';
+                //this.state.needToShuffleImages = true;
                 this._callSubscriber(store.state);
                 break;
         }
