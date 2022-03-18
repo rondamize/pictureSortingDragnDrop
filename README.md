@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Picture Sorting Drag and Drop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi there! This is my project created using Flickr API. In this game you can get some photos from Flickr by tags and sort them into appropriate categories.
 
-## Available Scripts
+## Getting started
 
-In the project directory, you can run:
+It is quite easy, please run:
+
+### `npm install`
+
+to install all the necessary modules and then run
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+or
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+if you prefer :)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Using my app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When the app is launched, please type any two words into the search bar
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![alt text](./readmeImages/search.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Then press the search button and you will receive 10 shuffled photos (5 photos per keyword)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+![alt text](./readmeImages/downloadedImgs.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can now start sorting. Just drag image into appropriate basket
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![alt text](./readmeImages/dragging.png)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+At any moment you can see the images which have already been put in the basket. Just press the basket button
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![alt text](./readmeImages/viewingSorted.png)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Some facts about the app
 
-### Deployment
+* Drag and Drop interface was created using `react-beautiful-dnd`
+* I used `flickr-sdk` Flickr API client to fetch images from Flickr
+* If the app doesn't search images that is beacuse my api key has expired:( However, you can always insert your own at `DownloadImages` function in `Store.js`
+* I learned to create README files thanks to this app :)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
