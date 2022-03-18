@@ -45,7 +45,6 @@ let store = {
         columns: {
             'imagesArea': {
                 id: 'imagesArea',
-                //ImgIds: ['photo-0','photo-1']
                 ImgIds: ['k-0-photo-0','k-0-photo-1','k-0-photo-2','k-0-photo-3','k-0-photo-4',
                          'k-1-photo-0','k-1-photo-1','k-1-photo-2','k-1-photo-3','k-1-photo-4']
             },
@@ -73,16 +72,16 @@ let store = {
     dispatch(action) {
         switch (action.type) {
             case 'rerender':
-                debugger;
+                //debugger;
                 this._callSubscriber(store.state);
                 break;
             case 'UPDATE_SEARCH_TEXT':
-                debugger;
+                //debugger;
                 this.state.searchText = action.newText;
                 this._callSubscriber(store.state);
                 break;
             case 'CLEAR_PAGE':
-                debugger;
+                //debugger;
                 this.state.images = {
                     'keyWord-0': {
                         'k-0-photo-0': {id: 'k-0-photo-0', source: '', tag:''},
@@ -116,7 +115,6 @@ let store = {
                     }
                 };
                 this.state.userMessage = '';
-                //this.state.needToShuffleImages = true;
                 this._callSubscriber(store.state);
                 break;
         }

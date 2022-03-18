@@ -19,16 +19,28 @@ const DroppableButton = (props) => {
 
     return (
         <div>
-            <Droppable droppableId={props.droppableid} direction='horizontal'>
-                {provided => (
-                    <div className={classes.droppableButtonArea} ref={provided.innerRef}
-                         {...provided.droppableProps}>
-                        <button className={classes.droppableButton} onClick={changeSortedPhotosVisibility}>
-                            {props.state.columns[props.droppableid].tag}
-                        </button>
-                    </div>
-                )}
-            </Droppable>
+            {/*<Droppable droppableId={props.droppableid} direction='horizontal'>*/}
+            {/*    {provided => (*/}
+            {/*        <div className={classes.droppableButtonArea} ref={provided.innerRef}*/}
+            {/*             {...provided.droppableProps}>*/}
+            {/*            <button className={classes.droppableButton} onClick={changeSortedPhotosVisibility}>*/}
+            {/*                {props.state.columns[props.droppableid].tag}*/}
+            {/*            </button>*/}
+            {/*        </div>*/}
+            {/*    )}*/}
+            {/*</Droppable>*/}
+            <div className={classes.droppableButtonArea}>
+                <Droppable droppableId={props.droppableid} direction='horizontal'>
+                    {provided => (
+
+                            <button className={classes.droppableButton} onClick={changeSortedPhotosVisibility}
+                                    ref={provided.innerRef}
+                                    {...provided.droppableProps}>
+                                {props.state.columns[props.droppableid].tag}
+                            </button>
+                    )}
+                </Droppable>
+            </div>
             <div className={props.state.displaySortedPhotos ? classes.sortedImagesShown : classes.sortedImages}>
                 {imagesElements}
             </div>

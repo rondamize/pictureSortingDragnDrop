@@ -36,10 +36,9 @@
 }
 
 .sortedImagesShown {
-    /*border: 1px solid black;*/
     display: flex;
     justify-content: space-around;
-    /*border-right: 1px solid red;*/
+    align-items: start;
 }
 
 

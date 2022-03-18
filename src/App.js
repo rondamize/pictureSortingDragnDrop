@@ -29,7 +29,6 @@ function App(props) {
         //debugger;
 
         if (end.tag !== allImages[draggableId].tag) {
-            //alert('Нельзя кота к собакам');
             return;
         }
 
@@ -38,8 +37,6 @@ function App(props) {
 
         let newDroppableAreaArray = Array.from(end.ImgIds);
         newDroppableAreaArray.push(draggableId);
-
-        //debugger;
 
         const newStartColumn = {
             ...start,
@@ -54,6 +51,10 @@ function App(props) {
         state.columns[source.droppableId] = newStartColumn;
         state.columns[destination.droppableId] = newEndColumn;
 
+        //debugger;
+        if (state.columns[source.droppableId].ImgIds.length === 0) {
+            state.userMessage = "Congratulations! U have successfully sorted all images.";
+        }
         //debugger;
         props.dispatch({type:'rerender'});
     };
