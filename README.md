@@ -49,5 +49,6 @@ At any moment you can see the images which have already been put in the basket. 
 * Drag and Drop interface was created using `react-beautiful-dnd`
 * I used `flickr-sdk` Flickr API client to fetch images from Flickr
 * If the app doesn't search images that is beacuse my api key has expired:( However, you can always insert your own at `DownloadImages` function in `Store.js`
+* Sometimes it returns really inappropriate pictures which do not match any of the keywords at all...well...that's Flickr
 * I learned to create README files thanks to this app :)
 
