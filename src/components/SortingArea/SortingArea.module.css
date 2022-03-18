@@ -1,0 +1,5 @@
+.sortingArea {
+    min-height: 200px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}

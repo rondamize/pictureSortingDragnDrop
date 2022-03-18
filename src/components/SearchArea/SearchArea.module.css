@@ -1,0 +1,51 @@
+.searchArea {
+    font-family: 'Raleway', sans-serif;
+}
+
+.form {
+    position: relative;
+    width: 300px;
+    margin: 20px auto;
+    display: flex;
+}
+
+.searchInput {
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    outline: none;
+    background: white;
+    color: #9E9C9C;
+    font-size: 18px;
+}
+
+.searchButton {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 42px;
+    height: 48px;
+    border: none;
+    background: #7BA7AB;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    color:white;
+    font-size: 16px;
+}
+
+.searchButton:hover {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.userMessageArea {
+    position: relative;
+    display: flex;
+}
+
+.userMessage {
+    color: white;
+    margin: 0 auto;
+}

@@ -1,0 +1,36 @@
+.droppableButtonArea {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.droppableButton {
+    width: 250px;
+    height: 100px;
+    background-color: #7BA7AB;
+    color: white;
+    border-radius: 20px;
+    font-size:36px;
+    border: 2px solid #2A5F63;
+    margin: 0 auto;
+}
+
+.droppableButton:hover {
+    border: 5px solid #2A5F63;
+}
+
+.droppableButton:hover {
+    font-weight: bolder;
+}
+
+.sortedImages {
+    display:none;
+}
+
+.sortedImagesShown {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+
