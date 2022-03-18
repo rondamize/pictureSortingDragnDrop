@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "node ./changeConfig.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -41,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "rewire": "^6.0.0",
+    "webpack-cli": "^4.9.2"
   }
 }
