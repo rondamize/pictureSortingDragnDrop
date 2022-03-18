@@ -37,7 +37,7 @@
 
 .sortedImagesShown {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: start;
 }
 

@@ -9,6 +9,7 @@ export let DownloadImages = async (searchText) => {
     await f.photos.search({
         text: searchText,
         per_page: 5,
+        page: Math.round(Math.random() * 101),
         sort: 'interestingness-desc'
     }).then(function (res) {
         console.log('yay!', res.body.photos.photo);
@@ -41,7 +42,11 @@ let store = {
         },
         userMessage:'',
         searchText:'',
-        displaySortedPhotos: false,
+        displaySortedPhotos: {
+            displaySortedPhotos0: false,
+            displaySortedPhotos1: false
+        },
+        // displaySortedPhotos: false,
         columns: {
             'imagesArea': {
                 id: 'imagesArea',
@@ -115,6 +120,10 @@ let store = {
                     }
                 };
                 this.state.userMessage = '';
+                this.displaySortedPhotos =  {
+                    displaySortedPhotos0: false,
+                    displaySortedPhotos1: false
+                }
                 this._callSubscriber(store.state);
                 break;
         }

@@ -5,10 +5,8 @@ import DroppableButton from "./DroppableButton/DroppableButton";
 const SortingArea = (props) => {
     return (
         <div className={classes.sortingArea}>
-            <DroppableButton state={props.state} dispatch={props.dispatch} droppableid={'sortingArea0'}/>
-            <DroppableButton state={props.state} dispatch={props.dispatch} droppableid={'sortingArea1'}/>
-            {/*<DroppableArea(Is not used currently) state={props.state} dispatch={props.dispatch} droppableid={'sortingArea0'}/>*/}
-            {/*<DroppableArea(Is not used currently) state={props.state} dispatch={props.dispatch} droppableid={'sortingArea1'}/>*/}
+            <DroppableButton state={props.state} dispatch={props.dispatch} droppableid={'sortingArea0'} areaId={'0'}/>
+            <DroppableButton state={props.state} dispatch={props.dispatch} droppableid={'sortingArea1'} areaId={'1'}/>
         </div>
     );
 };
